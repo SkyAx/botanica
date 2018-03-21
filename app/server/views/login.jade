@@ -1,0 +1,65 @@
+extends layout
+
+block anyLinks
+	link(href='css/login.css' rel='stylesheet')
+
+block content
+	header
+		.ui.large.pointing.menu
+			.ui.container
+				a.ui.logo.shape.center.aligned(href='/')
+					img.ui.small.image(src='img/logo-dark.png' alt='Логотип' title='Botanica')
+				nav.right.menu.center.aligned.middle.aligned
+					a.item.grey(href='/product') Продукты
+					a.item(href='/product') О системе
+					a.item(href='/product') Контакты
+	main
+		.ui.basic.segment
+			#login.ui.middle.aligned.center.aligned
+				form#form-login.medium.well.ui.form(method='post')
+					h3.ui.top.attached.header.center.aligned Войдите в свой аккаунт
+					.ui.attached.segment
+						.field
+							.ui.left.icon.input
+								i.user.icon
+								input#user-tf.form-control(type='text', name='user', placeholder='Логин')
+						.field
+							.ui.left.icon.input
+								i.lock.icon
+								input#pass-tf.form-control(type='password', name='pass', placeholder='Пароль')
+						.field
+							.ui.left.icon.input
+								i.microchip.icon
+								input#id-tf.form-control(type='text', name='id', placeholder='ID устройства')
+						.action
+							.field
+								.ui.checkbox.rememember-me
+									input(type="checkbox")
+									label Запомнить меня
+							.field
+								button(type='submit').ui.green.submit.button.fluid Войти
+					.ui.error.message
+					.ui.bottom.attached.segment.center.aligned
+						p.content
+							|Нет аккаунта? 
+							a#create-account(href="/signup") Зарегистрироваться
+						p.content
+							|Забыли пароль? 
+							a#forgot-password(href="#") Восстановить
+					
+	footer
+		.ui.bottom.attached.segment
+			.ui.container.center.aligned
+				|by: 
+				a(href='qweb.by' target='_blank') qweb.by
+			
+
+	include modals/alert
+	include modals/lost-password
+
+block scripts
+	script(src='/js/libs.min.js')
+	script(src='/js/views/login.js')
+	script(src='/js/controllers/loginController.js')
+	script(src='/js/form-validators/loginValidator.js')
+	script(src='/js/form-validators/emailValidator.js')

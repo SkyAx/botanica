@@ -1,0 +1,48 @@
+{
+  "name": "botanica",
+  "version": "1.5.0",
+  "description": "A web application for managing a smart greenhouse",
+  "author": "Alexandr Konkov <alxndr.konkov@gmail.com>",
+  "website": {
+    "url": "dev.qweb.by"
+  },
+  "dependencies": {
+    "body-parser": "1.14.1",
+    "connect-mongo": "0.8.2",
+    "cookie-parser": "1.4.0",
+    "emailjs": "^1.0.4",
+    "errorhandler": "1.4.2",
+    "express": "4.13.3",
+    "express-session": "1.11.3",
+    "jade": "^1.11.0",
+    "jsonfile": "^3.0.1",
+    "moment": "2.10.3",
+    "mongodb": "2.0.45",
+    "semantic-ui": "^2.2.11",
+    "stylus": "0.52.4"
+  },
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "browser-sync": "^2.18.8",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cache": "^0.4.6",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-less": "^3.3.0",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sftp": "^0.1.5",
+    "gulp-uglifyjs": "^0.6.2",
+    "imagemin-pngquant": "^5.0.0"
+  },
+  "engines": {
+    "node": "4.2.1"
+  },
+  "scripts": {
+    "start": "node botanica.js"
+  }
+}

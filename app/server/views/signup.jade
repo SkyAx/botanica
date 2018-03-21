@@ -1,0 +1,54 @@
+extends layout
+
+block anyLinks
+	link(href='css/login.css' rel='stylesheet')
+
+block content
+	header
+		.ui.large.pointing.menu
+			.ui.container
+				a.ui.logo.shape.center.aligned(href='/')
+					img.ui.small.image(src='img/logo-dark.png' alt='Логотип' title='Botanica')
+				nav.right.menu.center.aligned.middle.aligned
+					a.item.grey(href='/product') Продукты
+					a.item(href='/product') О системе
+					a.item(href='/product') Контакты
+	main
+		// preset form values if we receive a userdata object //
+		- user = typeof(udata) != 'undefined' ? udata : { }
+		// store the userId on the client side in a hidden input field //
+		input(type='hidden', value= user._id)#userId
+		.ui.basic.segment
+			#account-form-container.account-form.ui.middle.aligned.center.aligned
+				form#account-form.medium.well.ui.form(method="post")
+					h3.ui.top.attached.header.center.aligned Регистрация
+					.ui.attached.segment
+						.field
+							label Ваше имя
+							input.form-control#name-tf(type='text', name='name', placeholder='Имя', value= user.name)
+						.field
+							label Ваша электронная почта
+							input.form-control#email-tf(type='text', name='email', placeholder='Email', value= user.email)
+						.field
+							label Имя пользователя
+							input.form-control#user-tf(type='text', name='user', placeholder='Логин', value= user.user).disabled
+						.field
+							label Пароль (более 6-ти символов)
+							input.form-control#pass-tf(type='password', placeholder='Пароль', name='pass', value='')
+					.ui.bottom.attached.segment.center.aligned.form-buttons
+						button(type='button')#account-form-btn1.ui.button Отменить
+						button(type='submit')#account-form-btn2.ui.primary.button Продолжить
+	footer
+		.ui.bottom.attached.segment
+			.ui.container.center.aligned
+				|by: 
+				a(href='qweb.by' target='_blank') qweb.by
+										
+	include modals/alert
+	include modals/form-errors
+
+block scripts
+	script(src='/js/libs.min.js')
+	script(src='/js/views/signup.js')
+	script(src='/js/controllers/signupController.js')
+	script(src='/js/form-validators/accountValidator.js')

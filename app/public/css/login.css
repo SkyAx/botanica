@@ -1,0 +1,12 @@
+.ui.middle.aligned.center.aligned {
+  margin: 6em auto;
+  width: 300px; }
+
+.copyright {
+  width: 50%; }
+
+.socials {
+  width: 50%;
+  font-size: 1.4em; }
+  .socials a {
+    margin-right: 1em; }

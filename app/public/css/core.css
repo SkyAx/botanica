@@ -1,0 +1,31 @@
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+header {
+  width: 100%;
+  margin: 0 auto auto; }
+
+main {
+  width: 100%;
+  margin: auto;
+  background: url("/img/header-bg.jpeg") no-repeat center/cover; }
+
+footer {
+  width: 100%;
+  margin: auto auto 0; }
+
+.logo {
+  padding: 1em 0; }

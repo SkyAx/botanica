@@ -1,0 +1,24 @@
+{
+  "name": "botanica",
+  "description": "A web application for managing a smart greenhouse",
+  "main": "",
+  "authors": [
+    "Alexandr Konkov <alxndr.konkov@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-form": "^4.2.1",
+    "jquery": "^3.2.1",
+    "raphael": "^2.2.7",
+    "justgage": "*"
+  }
+}

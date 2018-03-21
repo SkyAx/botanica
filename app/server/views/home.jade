@@ -1,0 +1,75 @@
+extends layout
+
+block anyLinks
+	link(href='/css/home.css' rel='stylesheet')
+
+block content
+	main.main
+		.sidebar
+			.ui.vertical.inverted.sticky.menu
+				.item.center.aligned
+					a(href='/home')
+						img.ui.small.image.logo-medium(src='/img/logo.png' alt='Логотип')
+						img.ui.small.image.logo-min(src='/img/logo-min.png' alt='Логотип')
+				a.active.item(href='/home')
+					.ui.inverted.header
+						i.home.icon
+						.content Главная
+				a.item(href='/')
+					.ui.inverted.header
+						i.area.chart.icon
+						.content Графики
+				a.item(href='/')
+					.ui.inverted.header
+						i.alarm.icon
+						.content Уведомления
+				a.item(href='/')
+					.ui.inverted.header
+						i.calendar.icon
+						.content Календарь
+				a.item(href='/')
+					.ui.inverted.header
+						i.cloud.icon
+						.content Погода
+				a.item(href='/')
+					.ui.inverted.header
+						i.settings.icon
+						.content Настройки
+				a.item(href='/')
+					.ui.inverted.header
+						i.sign.out.icon
+						.content Выйти
+		.main-container
+			.home.ui.segment
+				.sensors.ui.basic.segment
+					h2.ui.header Датчики
+					.sensors-container
+						.ui.segment.data
+							#tempAir
+						.ui.segment.data
+							#humiAir
+						.ui.segment.data
+							#tempGround
+						.ui.segment.data
+							#humiGround
+						.ui.segment.data
+							#light
+				.controlls.ui.basic.segment
+					h2.ui.header Управление
+					.controlls-container.ui.segment
+						.watering.ul.segment
+							h3.ui.header Полив
+							.ui.segment.watering-status.on
+							button.watering-on.positive.ui.button.fluid Включить
+							button.watering-off.negative.ui.button.fluid Выключить
+	include modals/alert
+	include modals/confirm
+	include modals/form-errors
+	
+
+block scripts
+	script(src='/js/libs.min.js')
+	script(src='/js/views/home.js')
+	script(src='/js/views/main.js')
+	script(src='/js/controllers/homeController.js')
+	script(src='/js/form-validators/accountValidator.js')
