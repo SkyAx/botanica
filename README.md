@@ -8,7 +8,7 @@ IoT project for remote control for greenhouses. This web application allows
 
  Software: Node.js + Mongo.db, Jade + Sass + SemanticUI, jQuery, Gulp, Bower.
 
- ##Screens
+ ## Screens
 
 First screen web app
 ![Web App first screen](botanica1.png)
